@@ -14,13 +14,13 @@ pip install mimo_sms
 For configuration it is necessary to add the system environment variables, the following variables with the respective values `MIMO_SMS_TOKEN` and `MIMO_SMS_HOST`
 
 Open terminal and do this
-## Linux or Mac
+### Linux or Mac
 ```
 $ export MIMO_SMS_TOKEN=your-token-key
 $ export MIMO_SMS_HOST=hostname
 ```
 
-## Windows
+### Windows
 
 ``` 
 set MIMO_SMS_TOKEN=your-token-key
@@ -30,7 +30,7 @@ set MIMO_SMS_HOST=hostname
 
 # Use
 
-## New message
+### New message
 
 Send sms message
 
@@ -41,7 +41,7 @@ message_resource.send('mysender', ['933843893'], 'Olá, Seja bem-vindo (a)')
 ```
 
 
-## Consulting credits
+### Consulting credits
 View your balance
 ``` 
 from mimo_sms.resources import Message
@@ -50,7 +50,7 @@ balance = message_resource.credits()
 print(balance)
 ```
 
-## Create sender
+### Create sender
 Create a new sender
 ```
 from mimo_sms.resources import Sender
@@ -59,7 +59,7 @@ sender_resource = Sender()
 sender_resource.create(**payload)
 ```
 
-## List your senders
+### List your senders
 List senders requested
 ```
 from mimo_sms.resources import Sender
