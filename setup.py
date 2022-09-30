@@ -4,11 +4,12 @@ from setuptools import find_packages, setup
 
 
 description = "MIMO SMS Gateway Python Library"
-with open("README.md", "r") as file:
+
+with open("README.md") as file:
     long_description = file.read()
 
 setup(
-    name="mimo-sms",
+    name="mimosms",
     version="1.0.0",
     author="João Santos",
     description=description,
