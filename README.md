@@ -1,4 +1,6 @@
-# python-mimo-sms
+# mimo-sms Python
+
+[![](https://img.shields.io/badge/mimosms-OpenSource-blue.svg)]("https://www.mimo.it.ao/pt")
 
 Python library to integration with MIMO SMS Service.
 The library is a simple integration for software developers 
@@ -50,6 +52,15 @@ balance = message_resource.credits()
 print(balance)
 ```
 
+### Add Credits
+Add credits
+``` 
+from mimo_sms.resources import Message
+message_resource = Message() 
+voucher_code = "your-voucher-code"
+message_resource.charge(voucher_code)
+```
+
 ### Create sender
 Create a new sender
 ```
@@ -76,7 +87,7 @@ payload = {'sender': 'your-sender-name', 'reason': 'your-reason'}
 sender_resource = Sender()
 senders = sender_resource.list()
 ```
-
+# Note
 All other resources are accessed in the same way by importing a resource class and calling only the class's methods to interact with the resource's data.
 
 # License
