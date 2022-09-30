@@ -48,7 +48,7 @@ View your balance
 ``` 
 from mimo_sms.resources import Message
 message_resource = Message() 
-balance = message_resource.credits()
+balance = message_resource.view_credits()
 print(balance)
 ```
 
@@ -58,7 +58,7 @@ Add credits
 from mimo_sms.resources import Message
 message_resource = Message() 
 voucher_code = "your-voucher-code"
-message_resource.charge(voucher_code)
+message_resource.charge_credits(voucher_code)
 ```
 
 ### Create sender
