@@ -83,7 +83,6 @@ List all senders available
 
 ```
 from mimo_sms.resources import Sender
-payload = {'sender': 'your-sender-name', 'reason': 'your-reason'}
 sender_resource = Sender()
 senders = sender_resource.list()
 ```
