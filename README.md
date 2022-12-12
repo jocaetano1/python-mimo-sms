@@ -9,7 +9,7 @@ to use in their projects and they need to quickly connect to an SMS service.
 # Installation
 
 ``` 
-pip install mimo_sms 
+pip install mimosms 
 ```
 
 # Configuration
