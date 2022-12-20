@@ -10,7 +10,7 @@ with open("README.md") as file:
 
 setup(
     name="mimosms",
-    version="1.0.0",
+    version="1.0.1",
     author="João Santos",
     description=description,
     long_description=long_description,
