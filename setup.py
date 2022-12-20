@@ -14,7 +14,12 @@ setup(
     author="João Santos",
     description=description,
     long_description=long_description,
-    packages=find_packages(where="mimo_sms", exclude="mimo_sms/tests"),
+    url="https://https://pypi.org/project/mimosms/",
+    packages=find_packages(
+        where='mimo_sms/',
+        include=['*'],
+        exclude=['tests'],
+    ),
     install_requires=open('requirements.txt').readlines(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -27,7 +32,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    keywords=['gateway', 'sms', 'mimo', 'integração'],
+    keywords=['gateway', 'sms', 'mimo'],
     python_requires=">=3.8",
     py_modules=["mimo_sms"],
     package_dir={"": "mimo_sms"},

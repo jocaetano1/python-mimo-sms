@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 
 import requests
-from mimo_sms.connection import Mimo
+from . import Mimo
 
 
 class Sender(Mimo):
