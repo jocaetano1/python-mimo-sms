@@ -35,7 +35,7 @@ setup(
     keywords=['gateway', 'sms', 'mimo'],
     python_requires=">=3.8",
     py_modules=["mimo_sms"],
-    package_dir={"": "mimo_sms"},
+    package_dir={"": "src"},
     maintainer="João Santos",
     author_email="josan5368@gmail.com"
 )
