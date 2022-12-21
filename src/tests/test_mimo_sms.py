@@ -1,8 +1,8 @@
 # -*- coding: utf8 -*-
 
-from mimo_sms.resources.messages import Message
-from mimo_sms.resources.senders import Sender
-from mimo_sms.resources import Mimo
+from src.mimosms.messages import Message
+from src.mimosms.senders import Sender
+from src.mimosms import Mimo
 
 mimo_obj = Mimo()
 

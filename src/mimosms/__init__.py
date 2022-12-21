@@ -20,8 +20,7 @@ class Mimo:
         """Charge accounts of user using voucher code."""
         url = self._make_url('credit/recharge')
         res = requests.get(url, params={'voucher': voucher})
-        data = self._mimo_response_object(res)
-        return data['status']
+        return self._mimo_response_object(res)
 
     def view_credits(self):
         """View the credit of user."""
@@ -34,8 +33,7 @@ class Mimo:
         url = self._make_url('credit/transfer')
         res = requests.get(
             url, params={'username': username, 'balance': balance})
-        data = self._mimo_response_object(res)
-        return data['status']
+        return self._mimo_response_object(res)
 
     def logout(self):
         """Log out of session"""

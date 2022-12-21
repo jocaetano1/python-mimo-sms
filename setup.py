@@ -10,13 +10,13 @@ with open("README.md") as file:
 
 setup(
     name="mimosms",
-    version="1.0.1",
+    version="1.0.2",
     author="João Santos",
     description=description,
     long_description=long_description,
     url="https://https://pypi.org/project/mimosms/",
     packages=find_packages(
-        where='mimo_sms/',
+        where='src/',
         include=['*'],
         exclude=['tests'],
     ),
