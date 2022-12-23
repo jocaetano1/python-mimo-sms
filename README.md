@@ -13,20 +13,20 @@ pip install mimosms
 ```
 
 # Configuration
-For configuration it is necessary to add the system environment variables, the following variables with the respective values `MIMO_SMS_TOKEN` and `MIMO_SMS_HOST`
+For configuration it is necessary to add the system environment variables, the following variables with the respective values `MIMO_API_TOKEN` and `MIMO_API_HOST`
 
 Open terminal and do this
 ### Linux or Mac
 ```
-$ export MIMO_SMS_TOKEN=your-token-key
-$ export MIMO_SMS_HOST=hostname
+$ export MIMO_API_TOKEN=your-token-key
+$ export MIMO_API_HOST=hostname
 ```
 
 ### Windows
 
 ``` 
-set MIMO_SMS_TOKEN=your-token-key
-set MIMO_SMS_HOST=hostname
+set MIMO_API_TOKEN=your-token-key
+set MIMO_API_HOST=hostname
 ```
 
 
@@ -37,7 +37,7 @@ set MIMO_SMS_HOST=hostname
 Send sms message
 
 ``` 
-from mimo_sms.resources import Message
+from mimosms.messages import Message
 message_resource = Message()
 message_resource.send('mysender', ['933843893'], 'Olá, Seja bem-vindo (a)') 
 ```
@@ -46,25 +46,25 @@ message_resource.send('mysender', ['933843893'], 'Olá, Seja bem-vindo (a)')
 ### Consulting credits
 View your balance
 ``` 
-from mimo_sms.resources import Message
-message_resource = Message() 
-balance = message_resource.view_credits()
+from mimosms import Mimo
+mimo_obj = Mimo() 
+balance = mimo_obj.view_credits()
 print(balance)
 ```
 
 ### Add Credits
 Add credits
 ``` 
-from mimo_sms.resources import Message
-message_resource = Message() 
+from mimosms import Mimo
+mimo_obj = Mimo() 
 voucher_code = "your-voucher-code"
-message_resource.charge_credits(voucher_code)
+mimo_obj.charge_credits(voucher_code)
 ```
 
 ### Create sender
 Create a new sender
 ```
-from mimo_sms.resources import Sender
+from mimosms.senders import Sender
 payload = {'sender': 'your-sender-name', 'reason': 'your-reason'}
 sender_resource = Sender()
 sender_resource.create(**payload)
@@ -73,7 +73,7 @@ sender_resource.create(**payload)
 ### List your senders
 List senders requested
 ```
-from mimo_sms.resources import Sender
+from mimosms.senders import Sender
 payload = {'sender': 'your-sender-name', 'reason': 'your-reason'}
 sender_resource = Sender()
 senders_requested = sender_resource.list(requested=True)
@@ -82,7 +82,7 @@ senders_requested = sender_resource.list(requested=True)
 List all senders available
 
 ```
-from mimo_sms.resources import Sender
+from mimosms.senders import Sender
 sender_resource = Sender()
 senders = sender_resource.list()
 ```
