@@ -2,7 +2,7 @@
 
 import unittest
 
-from mimo import MimoService, RequestService
+from mimo import MimoSMS, RequestService
 
 
 class MimoServiceTestCase(unittest.TestCase):
@@ -15,8 +15,9 @@ class MimoServiceTestCase(unittest.TestCase):
 
     def test_create_mimo_service(self):
         """Should create a mimo service instance."""
-        mimo_service = MimoService(self.host, self.token, self.requests)
-        self.assertTrue(hasattr(mimo_service, "_host") and hasattr(mimo_service, "_token"))
+        mimo_service = MimoSMS(self.host, self.token, self.requests)
+        self.assertTrue(hasattr(mimo_service, "_host")
+                        and hasattr(mimo_service, "_token"))
 
 
 if __name__ == "__main__":
