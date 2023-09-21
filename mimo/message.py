@@ -24,8 +24,6 @@ class MessageService(CommunTools):
         return response
 
     def list_by_phone_number(self, phone_number: str):
-        url = self.make_url("message/list-all")
-        response = self._requests.get(url)
         url = self.make_url("message/list-all/by-recipient")
         response = self._requests.get(url, params={'phone': phone_number})
         return response
