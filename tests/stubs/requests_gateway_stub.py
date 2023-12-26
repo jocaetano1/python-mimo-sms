@@ -5,7 +5,10 @@ from mimo.gateway import RequestGateway
 class RequestGatewayStub(RequestGateway):
     """Stub for RequestGateway."""
 
-    def get(self, url: str, params: Dict[str, str]) -> Dict[str, Any]:
+    def get(
+        self, url: str,
+        params: Dict[str, str] = None  # type: ignore
+    ) -> Dict[str, Any]:
         data = {
             'status': 'Ok',
             'message': 'Message deleted successfully'
