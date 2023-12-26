@@ -1,9 +1,6 @@
 # -*- coding: utf8 -*-
 
 
-from typing import Dict
-
-
 class CommunTools:
     def make_url(self, endpoint: str) -> str:
         """Make url for request."""
