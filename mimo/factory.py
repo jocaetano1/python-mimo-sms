@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 
-from mimo.gateway import RequestGatewayImpl
+from mimo.gateway import MimoGatewayImpl
 from mimo.message import MessageService
 from mimo.sender import SenderService
 
@@ -10,7 +10,7 @@ class MimoFactory:
     def __init__(self, host: str, token: str) -> None:
         self._host = host
         self._token = token
-        self._gateway = RequestGatewayImpl()
+        self._gateway = MimoGatewayImpl()
 
     def create_message_service(self) -> MessageService:
         return MessageService(self._host, self._token, self._gateway)

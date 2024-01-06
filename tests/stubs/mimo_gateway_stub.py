@@ -1,8 +1,8 @@
 from typing import Any, Dict
-from mimo.gateway import RequestGateway
+from mimo.gateway import MimoGateway
 
 
-class RequestGatewayStub(RequestGateway):
+class MimoGatewayStub(MimoGateway):
     """Stub for RequestGateway."""
 
     def get(

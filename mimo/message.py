@@ -2,16 +2,16 @@
 
 from typing import Union
 from mimo.tools import CommunTools
-from mimo.gateway import RequestGateway
+from mimo.gateway import MimoGateway
 
 
 class MessageService(CommunTools):
     """Communication with SMS resource."""
     _host: str
     _token: str
-    _gateway: RequestGateway
+    _gateway: MimoGateway
 
-    def __init__(self, host: str, token: str, gateway: RequestGateway):
+    def __init__(self, host: str, token: str, gateway: MimoGateway):
         self.host = host
         self.token = token
         self._gateway = gateway

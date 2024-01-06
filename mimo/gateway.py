@@ -7,7 +7,7 @@ from typing import Dict, Union
 import requests
 
 
-class RequestGateway(abc.ABC):
+class MimoGateway(abc.ABC):
     """Gateway for requests."""
 
     @abc.abstractmethod
@@ -23,7 +23,7 @@ class RequestGateway(abc.ABC):
         pass
 
 
-class RequestGatewayImpl(RequestGateway):
+class MimoGatewayImpl(MimoGateway):
     def get(
         self,
         url: str,
