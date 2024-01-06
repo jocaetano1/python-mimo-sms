@@ -5,7 +5,7 @@ from unittest.mock import Mock
 
 from mimo.message import MessageService
 
-from tests.stubs.requests_gateway_stub import RequestGatewayStub
+from tests.stubs.mimo_gateway_stub import MimoGatewayStub
 
 
 class MessageServiceTestCase(unittest.TestCase):
@@ -21,7 +21,7 @@ class MessageServiceTestCase(unittest.TestCase):
         sender = "some-sender"
         recipients = ["933843893"]
         message = "some-text"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.send(sender, recipients, message)
@@ -33,7 +33,7 @@ class MessageServiceTestCase(unittest.TestCase):
         sender = "some-sender"
         recipients = ["933843893", "956562420"]
         message = "some-text"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.send(sender, recipients, message)
@@ -45,7 +45,7 @@ class MessageServiceTestCase(unittest.TestCase):
         sender = "some-sender"
         recipients = ["933843893"]
         message = "some-text"
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
 
         service.send(sender, recipients, message)
@@ -63,7 +63,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_delete_an_sms(self):
         """Should delete an sms."""
         sms_id = "9210"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.delete(sms_id)
@@ -79,7 +79,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_delete_more_than_one_sms(self):
         """Should delete more than one sms."""
         sms_ids = ["9210", "9211"]
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.delete(sms_ids)
@@ -95,7 +95,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_call_gateway_with_correct_url_to_delete_sms(self):
         """Should call gateway with correct url to delete sms."""
         sms_id = "9210"
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
 
         service.delete(sms_id)
@@ -110,7 +110,7 @@ class MessageServiceTestCase(unittest.TestCase):
         """Should view status of sms in all recipients."""
 
         sms_id = "9210"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.status(sms_id)
@@ -121,7 +121,7 @@ class MessageServiceTestCase(unittest.TestCase):
         """Should call gateway with correct url to view sms status."""
 
         sms_id = "9210"
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
 
         service.status(sms_id)
@@ -135,7 +135,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_list_all_sms(self):
         """Should list all sms."""
 
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.get_all()
@@ -145,7 +145,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_call_gateway_with_correct_url_to_list_all_sms(self):
         """Should call gateway with correct url to list all sms."""
 
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
 
         service.get_all()
@@ -159,7 +159,7 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_get_sms_by_recipient(self):
         """Should get sms by recipient."""
         recipient = "933843893"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.get_by_recipient(recipient)
@@ -169,12 +169,13 @@ class MessageServiceTestCase(unittest.TestCase):
     def test_should_call_gateway_with_correct_url_to_get_sms_by_recipient(self):
         """Should call gateway with correct url to get sms by recipient."""
         phone_number = "933843893"
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
 
         service.get_by_recipient(phone_number)
 
-        url = f'{self.host}/mimosms/v1/message/list-all/by-recipient?token={self.token}'
+        url = f'{self.host}/mimosms/v1/message/list-all/'
+        url += f'by-recipient?token={self.token}'
 
         gateway.get.assert_called()
         gateway.get.assert_called_once()
@@ -185,7 +186,7 @@ class MessageServiceTestCase(unittest.TestCase):
         """Should get sms by range date."""
         start_date = "2020-01-01"
         end_date = "2020-01-02"
-        gateway = RequestGatewayStub()
+        gateway = MimoGatewayStub()
         service = MessageService(self.host, self.token, gateway)
 
         response = service.get_by_date(start_date, end_date)
@@ -196,7 +197,7 @@ class MessageServiceTestCase(unittest.TestCase):
         """Should call gateway with correct url to get sms by range date."""
         start_date = "2020-01-01"
         end_date = "2020-01-02"
-        gateway = Mock(spec=RequestGatewayStub())
+        gateway = Mock(spec=MimoGatewayStub())
         service = MessageService(self.host, self.token, gateway)
         interval = {'start-date': start_date, 'end-date': end_date}
 
