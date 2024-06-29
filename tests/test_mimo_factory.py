@@ -1,13 +1,16 @@
 # -*- coding: utf8 -*-
 
+"""Test cases for mimo factory"""
+
 from unittest import TestCase
 
-from mimo.message import MessageService
-from mimo.sender import SenderService
-from mimo.factory import MimoFactory
+from src.mimo.message import MessageService
+from src.mimo.sender import SenderService
+from src.mimo.factory import MimoFactory
 
 
 class MimoFactoryTestCase(TestCase):
+    """Mimo test factory"""
 
     def setUp(self) -> None:
         self.host = "http://localhost:9000"

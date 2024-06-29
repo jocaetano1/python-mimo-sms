@@ -8,7 +8,7 @@ from typing import Any, Union
 import requests
 
 
-class MimoGateway(abc.ABC):
+class Gateway(abc.ABC):
     """Gateway for requests."""
 
     @abc.abstractmethod
@@ -22,7 +22,7 @@ class MimoGateway(abc.ABC):
         raise NotImplementedError
 
 
-class MimoGatewayImpl(MimoGateway):
+class MimoGateway(Gateway):
     """Gateway for requests."""
 
     def get(self, url: str,params: dict[str, str] = None) -> dict[str, Union[str, int]]:

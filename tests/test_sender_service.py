@@ -1,8 +1,10 @@
-from unittest.mock import Mock
-from unittest import TestCase
+"""Test cases for mimo sender service"""
 
-from tests.stubs.mimo_gateway_stub import MimoGatewayStub
-from mimo.sender import SenderService
+from unittest import TestCase
+from unittest.mock import Mock
+
+from src.mimo.sender import SenderService
+from tests.stubs import MimoGatewayStub
 
 
 class SenderServiceTestCase(TestCase):

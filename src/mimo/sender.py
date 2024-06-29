@@ -4,16 +4,16 @@
 
 from typing import Dict, Union
 
-from mimo.gateway import MimoGateway
-from mimo.tools import CommunTools
+from src.mimo.gateway import Gateway
+from src.mimo.tools import CommunTools
 
 
 class SenderService(CommunTools):
     """Sender Service"""
 
-    _gateway: MimoGateway
+    _gateway: Gateway
 
-    def __init__(self, host: str, token: str,  gateway: MimoGateway) -> None:
+    def __init__(self, host: str, token: str,  gateway: Gateway) -> None:
         self.host = host
         self.token = token
         self._gateway = gateway

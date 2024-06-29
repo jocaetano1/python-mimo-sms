@@ -1,11 +1,12 @@
 # -*- coding: utf8 -*-
 
+"""Test cases for message service"""
+
 import unittest
 from unittest.mock import Mock
 
-from mimo.message import MessageService
-
-from tests.stubs.mimo_gateway_stub import MimoGatewayStub
+from src.mimo.message import MessageService
+from tests.stubs import MimoGatewayStub
 
 
 class MessageServiceTestCase(unittest.TestCase):

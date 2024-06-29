@@ -2,9 +2,10 @@
 
 """Factory class for creating Mimo services."""
 
-from mimo.gateway import MimoGatewayImpl
-from mimo.message import MessageService
-from mimo.sender import SenderService
+from src.mimo.sender import SenderService
+from src.mimo.message import MessageService
+from src.mimo.gateway import MimoGateway
+
 
 
 class MimoFactory:
@@ -13,7 +14,7 @@ class MimoFactory:
     def __init__(self, host: str, token: str) -> None:
         self._host = host
         self._token = token
-        self._gateway = MimoGatewayImpl()
+        self._gateway = MimoGateway()
 
     def create_message_service(self) -> MessageService:
         """Create a new message service."""

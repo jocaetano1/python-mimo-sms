@@ -2,15 +2,15 @@
 
 """Service for sending messages."""
 
-from typing import Union
-from mimo.tools import CommunTools
-from mimo.gateway import MimoGateway
+
+from src.mimo.gateway import Gateway
+from src.mimo.tools import CommunTools
 
 
 class MessageService(CommunTools):
     """Communication with SMS resource."""
 
-    def __init__(self, host: str, token: str, gateway: MimoGateway):
+    def __init__(self, host: str, token: str, gateway: Gateway):
         self.host = host
         self.token = token
         self._gateway = gateway
@@ -29,7 +29,7 @@ class MessageService(CommunTools):
 
         return response
 
-    def delete(self, ids: Union[str, list]) -> dict:
+    def delete(self, ids: str | list) -> dict:
         """Delete an message."""
 
         if isinstance(ids, list):
