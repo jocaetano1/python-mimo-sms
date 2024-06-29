@@ -3,8 +3,8 @@
 """Service for sending messages."""
 
 
-from src.mimo.gateway import Gateway
-from src.mimo.tools import CommunTools
+from .gateway import Gateway
+from .tools import CommunTools
 
 
 class MessageService(CommunTools):

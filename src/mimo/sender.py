@@ -4,8 +4,8 @@
 
 from typing import Dict, Union
 
-from src.mimo.gateway import Gateway
-from src.mimo.tools import CommunTools
+from .gateway import Gateway
+from .tools import CommunTools
 
 
 class SenderService(CommunTools):

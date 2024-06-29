@@ -2,9 +2,9 @@
 
 """Factory class for creating Mimo services."""
 
-from src.mimo.sender import SenderService
-from src.mimo.message import MessageService
-from src.mimo.gateway import MimoGateway
+from .sender import SenderService
+from .message import MessageService
+from .gateway import MimoGateway
 
 
 

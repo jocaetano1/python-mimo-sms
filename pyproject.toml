@@ -1,0 +1,28 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mimosms"
+version = "2.0.4"
+description = "Integration with Mimo SMS API"
+readme = "README.md"
+authors = [{ name = "João Santos", email = "josan5368@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["mimosms", "sms"]
+dependencies = [
+    "requests == 2.28.1",
+]
+requires-python = ">=3.9"
+
+
+[project.urls]
+Homepage = "https://github.com/jocaetano1/python-mimo-sms"
+
