@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mimosms"
-version = "2.0.4"
+version = "2.0.5"
 description = "Integration with Mimo SMS API"
 readme = "README.md"
 authors = [{ name = "João Santos", email = "josan5368@gmail.com" }]
