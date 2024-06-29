@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Service for managing senders."""
+
 from typing import Dict, Union
 
 from mimo.gateway import MimoGateway

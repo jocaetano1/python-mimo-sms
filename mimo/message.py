@@ -1,5 +1,7 @@
 # -*- coding: utf8 -*-
 
+"""Service for sending messages."""
+
 from typing import Union
 from mimo.tools import CommunTools
 from mimo.gateway import MimoGateway
@@ -7,9 +9,6 @@ from mimo.gateway import MimoGateway
 
 class MessageService(CommunTools):
     """Communication with SMS resource."""
-    _host: str
-    _token: str
-    _gateway: MimoGateway
 
     def __init__(self, host: str, token: str, gateway: MimoGateway):
         self.host = host
@@ -40,12 +39,12 @@ class MessageService(CommunTools):
 
         return self._gateway.get(url, params={'ids': ids})
 
-    def status(self, id: str) -> dict:
+    def status(self, message_id: str) -> dict:
         """Get status of an message."""
 
         url = self.make_url("message/list-one")
 
-        return self._gateway.get(url, params={'id': id})
+        return self._gateway.get(url, params={'id': message_id})
 
     def get_all(self) -> dict:
         """Get all messages."""
